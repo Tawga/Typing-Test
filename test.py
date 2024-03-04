@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 import requests
 
-TIME_TO_WRITE = 30#SECONDS
+TIME_TO_WRITE = 60#SECONDS
 ENDPOINT_URL = "https://random-word-api.herokuapp.com/word"
 
 class TypeTest:

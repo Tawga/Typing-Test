@@ -29,18 +29,25 @@ class Ui:
         self.game_frame = ctk.CTkFrame(master=self.window)
         self.display_label = ctk.CTkLabel(master=self.game_frame, text="LONGWORD", font=("Roboto", 46))
         self.display_label.pack(pady=20, padx=20, fill="both", expand=True)
-        self.text_entry = ctk.CTkEntry(master=self.game_frame, width=50, font=("Roboto", 40))
+        self.text_entry = ctk.CTkEntry(master=self.game_frame, width=50, font=("Roboto", 40), justify='center')
         self.text_entry.pack(pady=20, padx=20, fill="x", expand=True)
         
         # ENDSCREEN FRAME
         self.end_game_frame = ctk.CTkFrame(master=self.window)
-        self.characters_label = ctk.CTkLabel(master=self.end_game_frame, text= "Total written characters: 100", font=("Roboto", 24))
+        self.characters_label = ctk.CTkLabel(master=self.end_game_frame, 
+                                             text= "Total written characters: 100",
+                                             font=("Roboto", 24))
         self.characters_label.pack(pady=20, padx=20, fill="x", expand=True)
         self.cpm_label = ctk.CTkLabel(master=self.end_game_frame, text= "CPM: 0", font=("Roboto", 24))
         self.cpm_label.pack(pady=20, padx=20, fill="x", expand=True)
-        self.incor_words_label = ctk.CTkLabel(master=self.end_game_frame, text= "Incorrect words: ", font=("Roboto", 18))
+        self.incor_words_label = ctk.CTkLabel(master=self.end_game_frame,
+                                              text= "Incorrect words: ",
+                                              font=("Roboto", 18),
+                                              wraplength=300)
         self.incor_words_label.pack(pady=20, padx=20, fill="x", expand=True)
-        self.return_button = ctk.CTkButton(master=self.end_game_frame, text="Return to menu", command=self.return_to_menu)
+        self.return_button = ctk.CTkButton(master=self.end_game_frame,
+                                           text="Return to menu",
+                                           command=self.return_to_menu)
         self.return_button.pack(pady=20, padx=20, fill="x", expand=True)
         
         self.frames = [self.menu_frame, self.game_frame, self.end_game_frame]
@@ -61,8 +68,7 @@ class Ui:
                  
     def run_test(self):    
         self.show_frame(self.game_frame)
-        self.text_entry.focus()
-        
+        self.text_entry.focus()  
         self.next_word()
         self.test.start_timer()
         
